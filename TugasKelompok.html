@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Area Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        textarea {
+            width:90%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Masukkan Teks</h2>
+        <textarea id="textArea" placeholder="Ketik apa bae..." oninput="hitungKarakter()"></textarea>
+        <p id="charCount">Karakter: 0</p>
+        <button onclick="hapusTeks()">Hapus</button>
+    </div>
+
+    <script>
+        function hitungKarakter() {
+            let text = document.getElementById("textArea").value;
+            document.getElementById("charCount").innerText = "Karakter: " + text.length;
+        }
+
+        function hapusTeks() {
+            document.getElementById("textArea").value = "";
+            document.getElementById("charCount").innerText = "Karakter: 0"; 
+        }
+    </script>
+
+</body>
+</html>
